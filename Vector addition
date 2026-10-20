@@ -1,0 +1,13 @@
+import math
+theta=int(input('Theta in degrees? '))
+theta=math.radians(theta)
+a=int(input('a vector?'))
+b=int(input('b vector?'))
+def vector_addition(a,b):
+  r=math.sqrt((a**2)+(b**2)+ 2*a*b*(math.cos(theta)))
+  d= math.atan2(b*math.sin(theta),a+(b*math.cos(theta)))
+  d=math.degrees(d)
+  print(r)
+  print(d) 
+
+vector_addition(a,b)
