@@ -1,0 +1,13 @@
+while True:
+  task=input('code or decode? ')
+  while task not in['code','decode']:
+     print('Invalid.Try again.code or decode?')
+     break
+  if task=='code':
+   message=input('message? ')
+   real_message= (message[::-1])
+   print('abc'+real_message+'xyz')
+  elif task=='decode':
+   message1=input('message? ')
+   true_message=(message1[3:-3])
+   print(true_message[1:]+true_message[0])
