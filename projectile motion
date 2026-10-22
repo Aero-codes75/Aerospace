@@ -1,0 +1,10 @@
+import math
+
+u1= int(input('initial velocity? '))
+angle=int(input('lauch angle? '))
+angle=math.radians(angle)
+g=9.8
+u=(u1**2)*(math.sin(angle)**2)
+print(f'{u/(g+g)} m is the maximum height')
+print(f'{(u1**2)*(math.sin(2*angle))/g} is the range')
+print(f'{(2*u1)*math.sin(angle)/g} is the time of flight')
