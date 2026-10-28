@@ -1,0 +1,21 @@
+print('WELCOME to perpendicular calculator!!!')
+import math
+a=input('Do you have Hypotenuese? ')
+a=a.lower()
+if a=='yes':
+  b=input('Do you have theta? ')
+  if b.lower()=='yes':
+    hyp=int(input('what is the Hypotenuese? '))
+    theta=int(input('Theta in degrees? '))
+    theta=math.radians(theta)
+    print(f'Perpendicular is {(hyp)*(math.sin(theta))}')
+  if b.lower()=='no':
+    adj=int(input('Adjacent? '))
+    hyp2=int(input('Hypotenuese? '))
+    print(f'Perpendicular is {math.sqrt((hyp2**2)-(adj**2))}')
+
+if a=='no':
+  theta=int(input('Theta in degrees? '))
+  theta=math.radians(theta)
+  adj=int(input('Adjacent? '))
+  print(f'The perpendicular is {(adj)/(math.tan(theta))}')
