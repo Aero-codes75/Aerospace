@@ -1,0 +1,63 @@
+import math
+def pythagoras(a,b,operation,d):
+  if operation== 'add' and d=='no':
+    print(f'{math.sqrt((a*a)+(b*b))} is the hypotenuese')
+    print(f'first angle: {math.degrees(math.atan(per/adj))} degrees')
+    print(f'second angle: {90-(math.degrees(math.atan(per/adj)))} degrees')
+  if operation== 'substract':
+    print(f'last side {math.sqrt((a*a)-(b*b))}')
+    if d=='per':
+     print(f'first angle: {math.degrees(math.asin(per/hyp))} degrees')
+     print(f'second angle: {90-(math.degrees(math.asin(per/hyp)))} degrees')
+    if d=='adj':
+     print(f'first angle: {math.degrees(math.acos(adj/hyp))} degrees')
+     print(f'second angle: {90-(math.degrees(math.acos(adj/hyp)))} degrees')
+
+
+def trignometry(a,b):
+    if side== 'hypotenuese':
+      x1= int(input('length of hypotenuese? '))
+      print(f'{(math.sin(a))*x1} is the perpendicular')
+      print(f'{(math.cos(a))*x1} is the adjacent')
+      a=math.degrees(a)
+      print(f'{(90-a)} is the last angle')
+    if side== 'perpendicular':
+      x1= int(input('length of perpendicular? '))
+      print(f'{(x1)/(math.sin(a))} is the hypotenuese')
+      print(f'{((x1)/(math.sin(a)))*(math.cos(a))} is the adjacent') 
+      a=math.degrees(a)
+      print(f'{(90-a)} is the last angle')
+    if side== 'adjacent':
+      x1= int(input('length of adjacent? '))
+      print(f'{(x1)/(math.cos(a))} is the hypotenuese')
+      print(f'{((x1)*(math.tan(a)))} is the adjacent')
+      a=math.degrees(a)
+      print(f'{(90-a)} is the last angle')
+    
+given = input("2 sides or 1 side and 1 angle: ")
+given= given.lower()
+
+if given == '2 sides':
+  ask=input('Do you have hypotenuese? ')
+  ask=ask.lower()
+  if ask=='yes':
+   b=input('which other side you have, adjacent or perpendicular? ')
+   b=b.lower()
+   if b=='adjacent':
+     hyp=int(input('hyp?'))
+     adj=int(input('adj?'))
+     pythagoras(hyp,adj,operation='substract',d='adj')
+   if b=='perpendicular':
+     hyp=int(input('hyp?'))
+     per=int(input('per?'))
+     pythagoras(hyp,per,operation='substract',d='per') 
+  if ask=='no':
+   per=int(input('per?'))
+   adj=int(input('adj?'))
+   pythagoras(per,adj,operation='add',d='no')
+     
+if given=='1 side and 1 angle':
+   angle=int(input('Theta? '))
+   angle= math.radians(angle)
+   side=input('which side do you have? ')
+   trignometry(angle,side)
